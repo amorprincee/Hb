@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Princee!</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        text-align: center;
+        background: linear-gradient(to right, #FFD1DC, #FFF1F3);
+        overflow-x: hidden;
+    }
+    h1 { font-size: 3em; color: #FF1493; margin-top: 50px; }
+    h2 { color: #FF69B4; margin-top: 40px; }
+    p { font-size: 1.2em; color: #FF1493; margin: 20px; }
+    nav button {
+        margin: 10px;
+        padding: 12px 25px;
+        font-size: 1em;
+        background-color: #FF69B4;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    nav button:hover { transform: scale(1.1); }
+
+    section { display: none; padding: 20px; }
+
+    /* Balloons */
+    .balloon {
+        position: absolute;
+        width: 50px;
+        height: 70px;
+        background: radial-gradient(circle at 30% 30%, #FF69B4, #FF1493);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        animation: float 6s infinite ease-in-out;
+    }
+    .balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .balloon:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .balloon:nth-child(4) { left: 70%; animation-delay: 1s; }
+    .balloon:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+    @keyframes float {
+        0% { transform: translateY(100vh); }
+        50% { transform: translateY(30vh); }
+        100% { transform: translateY(-50px); }
+    }
+
+    /* Gallery images */
+    .images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+    }
+    .images img {
+        width: 200px;
+        max-width: 45vw;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s;
+    }
+    .images img:hover { transform: scale(1.05); }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+        p { font-size: 1em; margin: 10px; }
+        nav button { padding: 10px 20px; font-size: 0.9em; }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('gallery')">Gallery</button>
+    <button onclick="showSection('message')">Message</button>
+</nav>
+
+<section id="home">
+    <h1>Happy Birthday <span style="color:transparent;">D</span>Princee! 🎉🎂</h1>
+    <p>Wishing you a day full of joy and surprises!</p>
+
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+</section>
+
+<section id="gallery">
+    <h2>Memories & Fun 🎉</h2>
+    <div class="images">
+        <img src="https://via.placeholder.com/200x200?text=Pic+1" alt="Pic 1">
+        <img src="https://via.placeholder.com/200x200?text=Pic+2" alt="Pic 2">
+        <img src="https://via.placeholder.com/200x200?text=Pic+3" alt="Pic 3">
+    </div>
+</section>
+
+<section id="message">
+    <h2>A Special Message 💖</h2>
+    <p>Princee, may your life always be filled with happiness, love, and laughter. You're amazing and deserve the best birthday ever! 🌸✨</p>
+</section>
+
+<script>
+function showSection(id){
+    const sections = document.querySelectorAll('section');
+    sections.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+
+// Show home by default
+showSection('home');
+</script>
+
+</body>
+</html>
